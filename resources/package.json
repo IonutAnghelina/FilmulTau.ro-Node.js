@@ -1,0 +1,31 @@
+{
+  "name": "index",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ion-Marian Anghelina",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "node-sass": "^5.0.0",
+    "nodemailer": "^6.6.0",
+    "sharp": "^0.28.1"
+  },
+  "devDependencies": {},
+  "description": "Site pentru cinematograful FilmulTau",
+  "keywords": [
+    "film",
+    "filme",
+    "cinema",
+    "cinematograf",
+    "bilet",
+    "bilete",
+    "actiune",
+    "aventura",
+    "SF",
+    "comedie"
+  ]
+}

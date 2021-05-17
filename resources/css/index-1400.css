@@ -1,0 +1,40 @@
+@import "orar.css";
+@import "banner-mic.css";
+
+html {
+    font-size: 14px;
+}
+
+body {
+    --body-padding: 1.5rem;
+    margin: 0;
+}
+
+
+
+p.intro {
+    text-align: left;
+    text-align-last: left;
+}
+
+.fg-img img {
+    border-radius: 50%;
+    box-shadow: 0 0 0.5rem grey;
+}
+
+
+
+iframe {
+    max-width: 700px;
+    width: 100%;
+}
+
+
+#container-video {
+    display: none;
+}
+
+#tabel {
+    overflow-x: auto;
+    max-width: 10em;
+}

@@ -1,0 +1,7 @@
+#banner {
+    background: var(--bannerColor);
+    color: black;
+    text-align: center;
+
+    visibility: hidden;
+}

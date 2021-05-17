@@ -1,0 +1,45 @@
+#banner {
+    background: var(--bannerColor);
+    color: black;
+    text-align: center;
+    position: relative;
+    opacity: 1;
+
+    animation-name: bannerAnimation;
+    animation-duration: 6s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bannerAnimation {
+    0% {
+        background: var(--bannerColor);
+        top: 0px;
+        color: black;
+        opacity: 1;
+    }
+
+    25% {
+        background: var(--secBanner);
+        top: -20px;
+        color: var(--bannerText);
+        opacity: 1;
+    }
+
+    50% {
+        background: var(--bannerColor);
+        top: 0px;
+        color: black;
+        opacity: 1;
+    }
+
+
+    100% {  
+        background: var(--bannerColor);
+        top: 0px;
+        color: black;
+        visibility: hidden;
+    }
+}

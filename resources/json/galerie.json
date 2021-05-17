@@ -1,0 +1,59 @@
+{
+	"cale_galerie":"resources/galerie",
+	"imagini": [
+		
+        {
+            "cale_fisier":"winter_400x300.jpg",
+            "titlu":"Cinema Iarna",
+            "text_descriere":"Cinema Iarna",
+            "anotimp":"iarna"
+        },
+
+        {
+            "cale_fisier":"summer_400x300.png",
+            "titlu":"Cinema Vara",
+            "text_descriere":"Cinema Vara",
+            "anotimp":"vara"
+        },
+
+        {
+            "cale_fisier":"autumn_400x300.jpg",
+            "titlu":"Cinema Toamna",
+            "text_descriere":"Cinema Toamna",
+            "anotimp":"toamna"
+        },
+        {
+            "cale_fisier":"spring_400x300.png",
+            "titlu":"Cinema Primavara",
+            "text_descriere":"Cinema Primavara",
+            "anotimp":"primavara"
+        },
+        {
+            "cale_fisier":"winter_400x300-Copy.jpg",
+            "titlu":"Cinema Iarna",
+            "text_descriere":"Cinema Iarna",
+            "anotimp":"iarna"
+        },
+
+        {
+            "cale_fisier":"summer_400x300-Copy.png",
+            "titlu":"Cinema Vara",
+            "text_descriere":"Cinema Vara",
+            "anotimp":"vara"
+        },
+
+        {
+            "cale_fisier":"autumn_400x300-Copy.jpg",
+            "titlu":"Cinema Toamna",
+            "text_descriere":"Cinema Toamna",
+            "anotimp":"toamna"
+        },
+        {
+            "cale_fisier":"spring_400x300-Copy.png",
+            "titlu":"Cinema Primavara",
+            "text_descriere":"Cinema Primavara",
+            "anotimp":"primavara"
+        }
+
+	]
+}

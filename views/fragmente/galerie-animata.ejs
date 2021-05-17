@@ -1,0 +1,27 @@
+<section id="sectiune-galerie-animata">
+    <h2>Galerie animata</h2>
+    
+    <div id="galerie-animata" class="galerie-a">
+        <%console.log(locals.animLimit);%>
+        <%locals.imageCounter=0;%>
+        
+        <% for (let imag of locals.imagini){  %>
+            <% if (locals.imageCounter==locals.animLimit){ 
+                break;
+            }%>
+            <%locals.imageCounter+=1;%>
+            <!--<figure>
+                <img src="/<%-imag.mare%>" alt="briose">
+                <figcaption>Briose</figcaption>
+                </figure>-->
+                <figure class="galFig">
+            <picture>
+                <!-- il ia pe primul care se potriveste cu query-ul din media-->
+                <source srcset="/<%-imag.mic%>" media="(max-width:700px)"/>
+                <img src="/<%-imag.mare%>" alt="text"/>
+            </picture>
+            <figcaption><%-imag.descriere%></figcaption>
+        </figure>
+        <% } %>
+    </div>
+</section>

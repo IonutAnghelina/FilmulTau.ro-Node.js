@@ -1,0 +1,185 @@
+$mainColor:purple;
+$menuHeight:3rem;
+$lightColor:pink;
+
+
+@mixin position {
+  padding: 0;
+  margin: 0;
+}
+
+nav ul.meniu ul {
+
+  display: none;
+  position: absolute;
+
+  width: 100%;
+}
+
+
+nav {
+  height: $menuHeight;
+  width: 100%;
+  top: 0;
+  padding: 0;
+  background: $mainColor;
+  position: sticky;
+}
+
+nav {
+  ul.meniu>li {
+    float: left;
+    width: 100px;
+    position: relative;
+
+  }
+}
+
+$tags:ul li;
+
+nav {
+  @each $tag in $tags {
+    #{$tag} {
+      @include position;
+    }
+  }
+}
+
+nav ul.meniu li {
+
+  text-align: center;
+
+
+  list-style-type: none;
+  background: $mainColor;
+  cursor: pointer;
+}
+
+@mixin colorPack {
+  text-decoration: none;
+  color: black;
+  display: block;
+  font-weight: bold;
+
+  height: $menuHeight;
+  line-height: $menuHeight;
+  outline: 1px solid black;
+}
+
+$tags: a div;
+
+nav ul.meniu li {
+  @each $tag in $tags {
+    #{$tag} {
+      @include colorPack;
+    }
+  }
+
+}
+
+$tags: a div;
+
+ul.meniu {
+  @each $tag in $tags {
+    #{$tag} {
+      transition: background 700ms linear;
+    }
+  }
+
+}
+
+nav ul.meniu>li:hover >ul {
+  display: block;
+  animation-name: aparitie_meniu;
+  
+}
+
+nav ul.meniu>li:hover .dropdown
+{
+    animation-name: dropdown;
+    animation-iteration-count: 1;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+#hamburger {
+  display: none;
+  height: $menuHeight;
+}
+
+#ch-menu {
+  display: none;
+}
+
+#hamburger img {
+  height: 100%;
+  width: auto;
+}
+
+
+
+
+@keyframes dropdown {
+  0% {
+    opacity: 1;
+    height: 0;
+  }
+
+  100% {
+    opacity: 1;
+    height: 3em;
+    
+  }
+}
+
+@keyframes arrowAnim
+{
+  0%{
+    opacity:0;
+  }
+  1%
+  {
+    opacity:1;
+    transform:translateX(-10px);
+  }
+  100%
+  {
+    transform:translateX(0px);
+  }
+}
+#homeIcon {
+  display: none;
+}
+
+ul.meniu div:hover {
+
+
+  box-shadow: inset 1px 1px 5px 5px white;
+
+}
+
+ul.meniu .suboption:hover {
+  background: var(--bannerText);
+}
+
+.suboption::before {
+  content: "\2192";
+ // opacity: 0;
+}
+
+.suboption:hover:before
+{
+  animation-name: arrowAnim;
+  animation-iteration-count: 1;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear; 
+}
+ul.meniu .suboption:hover {
+  background: var(--bannerText);
+}
+
+ul.meniu .suboption:hover:before {
+  opacity: 1;
+
+}

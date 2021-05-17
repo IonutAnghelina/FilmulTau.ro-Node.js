@@ -1,0 +1,21 @@
+#poza1,
+#poza2 {
+    width: 30em;
+    height: 20em;
+    border-radius: 10px;
+}
+
+#pozeCinema {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+@media only screen and (max-width:1400px) {
+    #poza2 {
+        padding-top: 1em;
+    }
+
+}

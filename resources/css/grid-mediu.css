@@ -1,0 +1,13 @@
+main {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas: "g1 g1"
+        "g2 g3"
+        "g4 g4"
+        "g8 g8"
+        "g7 g7"
+        "g5 g6";
+
+    padding: 4%;
+    grid-gap: 2rem;
+}

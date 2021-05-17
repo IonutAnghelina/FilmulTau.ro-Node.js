@@ -1,0 +1,43 @@
+.ifr-video {
+    border: 5px solid white;
+}
+
+.Trailers {
+    display: flex;
+    flex-direction: row;
+}
+
+.taburi-iframe a {
+    text-decoration: none;
+    width: 100px;
+
+    display: inline-block;
+    border: 1px solid white;
+
+    border-left: none;
+
+    border-top-right-radius: 10px;
+    border-top-left-radius: 0px;
+    background-image: linear-gradient(white, white 50%, var(--color11));
+    color: var(--color6);
+    transition: all 0.5s linear;
+    text-align: center;
+
+    border:double;
+}
+
+.taburi-iframe a+a {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+}
+
+.taburi-iframe a:hover {
+    color: white;
+
+    background-image: none;
+    background-color: black;
+
+    
+    width: 150px;
+}

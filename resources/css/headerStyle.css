@@ -1,0 +1,22 @@
+header {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+#sigla {
+
+    border-radius: 10px;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+
+#sigla+#homeLink {
+    margin: 10px;
+}

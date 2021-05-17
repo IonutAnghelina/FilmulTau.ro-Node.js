@@ -1,0 +1,36 @@
+<p>Bine ați venit la <b>cinematograful</b> <b>FilmulTau</b>. Locul unde magia filmului se intampla.
+</p>
+<p>Priviti cateva din salile noastre de proiectie.</p>
+
+<section id="galerie-statica">
+    <h2>Galerie</h2>
+
+    <div id="grid-galerie">
+        <% for (let imag of locals.imagini){  %>
+            <% if (locals.imageCounter==10){ 
+                break;
+            }%>
+
+            <% //if (locals.anotimpCurent==imag.anotimp) //Just for testing
+            { locals.imageCounter+=1;console.log(locals.imageCounter);%>
+            <section id=<%-"im".concat(locals.imageCounter.toString(10));%> >
+            <%console.log("im"+locals.imageCounter.toString(10))%>
+            <!--<figure>
+                <img src="/<%-imag.mare%>" alt="briose">
+                <figcaption>Briose</figcaption>
+                </figure>-->
+                <figure>
+            <picture>
+                <!-- il ia pe primul care se potriveste cu query-ul din media-->
+                <source srcset="/<%-imag.mic%>" media="(max-width:700px)"/>
+                <img src="/<%-imag.mare%>" alt="text"/>
+            </picture>
+            <figcaption><%-imag.descriere%></figcaption>
+        </figure>
+            </section>
+            <%}%>
+        <% } %>
+        
+    
+    </div>
+</section>

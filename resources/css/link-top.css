@@ -1,0 +1,56 @@
+.link-top {
+    position: fixed;
+    display: block;
+    opacity: 0.5;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color2);
+    /**border-radius: 0.7rem;**/
+    border-bottom-right-radius: 0px;
+    border: 1px solid var(--color2);
+    box-shadow: 0px 0px 7px 2px inset var(--color2);
+    overflow: visible;
+    transform: rotateY(0deg) rotate(45deg);
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    transition-delay: 0s;
+}
+
+.triangle {
+    position: absolute;
+    bottom: 15px;
+    right: 18px;
+    border-bottom: 20px solid transparent;
+    border-top: 0px solid var(--color2);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 7px solid var(--color2);
+    border-right: 7px solid var(--color2);
+    background-color: var(--color5);
+    background-clip: border-box;
+    padding: 0;
+    width: auto;
+    height: auto;
+    box-sizing: border-box;
+    opacity: 0.5;
+    transform: rotateY(0deg) rotate(315deg);
+    transition-property: background-color, border-top-color, border-left-color, border-right-color;
+    transition-duration: 0.5s;
+    transition-delay: 0s;
+
+}
+
+.link-top:hover {
+    background-color: var(--color5);
+    opacity: 1;
+}
+
+.link-top:hover .triangle {
+    background-color: var(--color2);
+    border-top-color: var(--color5);
+    border-left-color: var(--color5);
+    border-right-color: var(--color5);
+    opacity: 1;
+}

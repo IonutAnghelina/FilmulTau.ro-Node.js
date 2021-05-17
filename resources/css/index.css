@@ -1,0 +1,137 @@
+@import "orar.css";
+@import "banner.css";
+@import "nav.css";
+@import "nav.scss";
+
+
+
+html {
+
+    font-size: 16px;
+}
+
+body {
+
+    margin-top: 0;
+    margin-bottom: 0;
+    --body-padding: 1rem;
+    --padding-intern: 4%;
+
+    background: var(--bgColor);
+
+    background-attachment: fixed;
+
+    background-size: cover;
+    padding-left: var(--body-padding);
+    padding-right: var(--body-padding);
+    padding-top: 0;
+    padding-bottom: 0;
+
+    min-width: 330px;
+
+}
+
+h1 {
+    font-size: 3rem;
+
+    text-shadow: 0px 0px 1px black, 0px 0px 2px black, 0px 0px 4px white, 0px 0px 4px white, 0px 0px 4px white;
+}
+
+main {
+    --main-border: 1px solid grey;
+    border-left: grey;
+    border-right: grey;
+    counter-reset: cnt;
+}
+
+
+
+header {
+    font-family: 'Tangerine', cursive;
+    font-size: 100px;
+}
+
+
+
+
+
+#grid-pagina section {
+
+    border: 2px dotted var(--color2);
+    padding: 1rem;
+}
+
+#grid-pagina>figure {
+    width: 100%;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+figure img {
+    width: 100%;
+}
+
+figcaption {
+    text-align: center;
+}
+
+
+
+#homeLink {
+    text-decoration: none;
+    color: black;
+}
+
+.anunt {
+    counter-increment: cnt;
+}
+
+.anunt::before {
+    content: "A"counter(cnt)". ";
+}
+
+summary {
+    background-image: linear-gradient(white, white 50%, var(--color11));
+    color: var(--color6);
+}
+
+strong {
+    color: var(--bannerText);
+}
+
+.quote {
+    font-size: 3em;
+    font-family: 'Tangerine', cursive;
+}
+
+s {
+    color: var(--bannerText);
+}
+
+ins {
+    color: var(--color9);
+}
+
+.anunturi {
+    list-style-type: '👉.';
+}
+
+h2 {
+    color: var(--navbg);
+    font-size: 1em;
+    font-family: 'Trirong', cursive;
+}
+
+#g1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+#watermark
+{
+    display:none;
+}

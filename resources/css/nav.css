@@ -1,0 +1,175 @@
+@charset "UTF-8";
+nav ul.meniu ul {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+nav {
+  height: 3rem;
+  width: 100%;
+  top: 0;
+  padding: 0;
+  background: purple;
+  position: sticky;
+}
+
+nav ul.meniu > li {
+  float: left;
+  width: 100px;
+  position: relative;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+}
+nav li {
+  padding: 0;
+  margin: 0;
+}
+
+nav ul.meniu li {
+  text-align: center;
+  list-style-type: none;
+  background: purple;
+  cursor: pointer;
+}
+
+nav ul.meniu li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  font-weight: bold;
+  height: 3rem;
+  line-height: 3rem;
+  outline: 1px solid black;
+}
+nav ul.meniu li div {
+  text-decoration: none;
+  color: black;
+  display: block;
+  font-weight: bold;
+  height: 3rem;
+  line-height: 3rem;
+  outline: 1px solid black;
+}
+
+ul.meniu a {
+  transition: background 700ms linear;
+}
+ul.meniu div {
+  transition: background 700ms linear;
+}
+
+nav ul.meniu > li:hover > ul {
+  display: block;
+  animation-name: aparitie_meniu;
+}
+
+nav ul.meniu > li:hover .dropdown {
+  animation-name: dropdown;
+  animation-iteration-count: 1;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+#hamburger {
+  display: none;
+  height: 3rem;
+}
+
+#ch-menu {
+  display: none;
+}
+
+#hamburger img {
+  height: 100%;
+  width: auto;
+}
+
+@keyframes dropdown {
+  0% {
+    opacity: 1;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 3em;
+  }
+}
+@keyframes arrowAnim {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(-15px);
+  }
+}
+
+@keyframes textAnim
+{
+  0% 
+  {
+    -webkit-transform:translateX(0);
+  }
+  100%
+  {
+    -webkit-transform:translateX(10px);
+  }
+}
+#homeIcon {
+  display: none;
+}
+
+ul.meniu div:hover {
+  box-shadow: inset 1px 1px 5px 5px white;
+}
+
+ul.meniu .suboption:hover {
+  background: var(--bannerText);
+}
+.suboption
+{
+  position:relative;
+}
+.suboption::before {
+  content: "→";
+  opacity: 0;
+  position:absolute;
+}
+
+.suboption::content
+{
+  position:absolute;
+}
+.suboption:hover::content
+{
+  animation-name: textAnim;
+  animation-iteration-count: 1;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+.suboption:hover:before {
+  animation-name: arrowAnim;
+  animation-iteration-count: 1;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+ul.meniu .suboption:hover {
+  background: var(--bannerText);
+}
+
+ul.meniu .suboption:hover:before {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=nav.css.map */
