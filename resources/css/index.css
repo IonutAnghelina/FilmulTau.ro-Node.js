@@ -135,3 +135,17 @@ h2 {
 {
     display:none;
 }
+
+body.dark{
+    
+    background: #0E9108;
+    --navbg:crimson;
+    --gradient-body:linear-gradient(transparent, transparent 25%, rgba(255,255,255,0.5) 50%, transparent 75%, transparent);
+}
+
+#schimbare-tema
+{
+    width: 10em;
+    background: red;
+    color: white;
+}

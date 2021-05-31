@@ -13,14 +13,14 @@ var app=express();//am creat serverul
 var animLimit;
 //setam datele clentului PostgreSQL
 //trebuie sa inlocuiti cu username-ul vostru si parola voastra pentru userul creat special pentru acest proiect
-/**const client = new Client({
+const client = new Client({
     host: 'localhost',
-    user: 'irina',
-    password: 'irina',
-    database: 'db_test',
+    user: 'postgres',
+    password: 'Iunie_2001',
+    database: 'tw',
     port:5432
 })
-client.connect()**/
+client.connect()
 
 
 
