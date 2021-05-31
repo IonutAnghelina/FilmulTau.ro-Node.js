@@ -145,7 +145,17 @@ body.dark{
 
 #schimbare-tema
 {
-    width: 10em;
-    background: red;
-    color: white;
+    width: 3em;
+    background:black;
+    color:white;
+}
+
+.dark>#butonsoare
+{
+    display:none;
+}
+
+.light>#butonluna
+{
+    display:none;
 }
