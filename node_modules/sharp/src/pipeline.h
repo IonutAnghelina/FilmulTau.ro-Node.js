@@ -109,6 +109,9 @@ struct PipelineBaton {
   double gammaOut;
   bool greyscale;
   bool normalise;
+  int claheWidth;
+  int claheHeight;
+  int claheMaxSlope;
   bool useExifOrientation;
   int angle;
   double rotationAngle;
@@ -168,6 +171,7 @@ struct PipelineBaton {
   std::string err;
   bool withMetadata;
   int withMetadataOrientation;
+  double withMetadataDensity;
   std::string withMetadataIcc;
   std::unordered_map<std::string, std::string> withMetadataStrs;
   std::unique_ptr<double[]> convKernel;
@@ -233,6 +237,9 @@ struct PipelineBaton {
     gamma(0.0),
     greyscale(false),
     normalise(false),
+    claheWidth(0),
+    claheHeight(0),
+    claheMaxSlope(3),
     useExifOrientation(false),
     angle(0),
     rotationAngle(0.0),
@@ -290,6 +297,7 @@ struct PipelineBaton {
     heifLossless(false),
     withMetadata(false),
     withMetadataOrientation(-1),
+    withMetadataDensity(0.0),
     convKernelWidth(0),
     convKernelHeight(0),
     convKernelScale(0.0),

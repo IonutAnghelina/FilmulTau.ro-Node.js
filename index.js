@@ -17,7 +17,7 @@ const client = new Client({
     host: 'localhost',
     user: 'postgres',
     password: 'Iunie_2001',
-    database: 'tw',
+    database: 'postgres',
     port:5432
 })
 client.connect()
@@ -80,11 +80,28 @@ app.get("/prezentare",function(req,res)
     res.render("pagini/prezentare", {imagini: verificaImagini(),anotimpCurent: getSeason(), imageCounter: 0,animLimit:animLimit}); /* relative intotdeauna la folderul views*/
 });
 
-app.get("/filme",function(req,res)
-{
-    console.log("Pagina de filme");
-    res.render("pagini/filme",{imagini: verificaImagini(),anotimpCurent: getSeason(), imageCounter: 0,animLimit:animLimit});
-})
+app.get("/filme",function(req, res){
+   // console.log("Pagina de filme");
+
+    //console.log("Url:",req.url);
+    //console.log("Query:", req.query.tip);
+    // conditie_booleana? val_true : val_false
+    let conditie= req.query.tip ?  " and tip_produs='"+req.query.tip+"'" : "";//daca am parametrul tip in cale (tip=cofetarie, de exemplu) adaug conditia pentru a selecta doar produsele de acel tip
+    console.log("select * from filme where 1=1"+conditie);
+    client.query("select * from filme where 1=1"+conditie, function(err,rez){
+        console.log(err, rez);
+        //console.log(rez.rows);
+        client.query("select unnest(enum_range( null::categ_film)) as categ", function(err,rezCateg){//selectez toate valorile posibile din enum-ul categ_prajitura
+
+            console.log(rezCateg);
+            res.render("pagini/filme", {produse:rez.rows, categorii:rezCateg.rows});//obiectul {a:10,b:20} poarta numele locals in ejs  (locals["a"] sau locals.a)
+            });
+        
+       
+    });
+
+    
+});
 app.get(["/","/index"],function(req, res){//ca sa pot accesa pagina principala si cu localhost:8080 si cu localhost:8080/index
     /*
     console.log("ceva");
