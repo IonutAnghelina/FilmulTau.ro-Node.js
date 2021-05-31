@@ -79,6 +79,12 @@ app.get("/prezentare",function(req,res)
     console.log("a doua pagina");
     res.render("pagini/prezentare", {imagini: verificaImagini(),anotimpCurent: getSeason(), imageCounter: 0,animLimit:animLimit}); /* relative intotdeauna la folderul views*/
 });
+
+app.get("/filme",function(req,res)
+{
+    console.log("Pagina de filme");
+    res.render("pagini/filme",{imagini: verificaImagini(),anotimpCurent: getSeason(), imageCounter: 0,animLimit:animLimit});
+})
 app.get(["/","/index"],function(req, res){//ca sa pot accesa pagina principala si cu localhost:8080 si cu localhost:8080/index
     /*
     console.log("ceva");
