@@ -4,9 +4,9 @@ $lista_transformari: ((rotateZ(0deg),rotateZ(135deg)),(skew(0deg), skew(90deg)),
 $indice:math.random(list.length($lista_transformari));
 
 
-@use '../resources/scss/galerie_animata_frag6' with (
+@use '../resources/scss/galerie_animata_frag8' with (
 
-  $setare-server: black
+  $setare-server: grey
 );
 
 
