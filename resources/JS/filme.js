@@ -20,8 +20,8 @@ window.onload=function(){
 
     let btn=document.getElementById("filtrare");
     btn.onclick=function(){
-        let inp=document.getElementById("inp-calorii");
-        let maxCalorii = inp.value
+        let inp=document.getElementById("inp-durata");
+        let maxDurata = inp.value
 
         
         inp=document.getElementById("inp-pret");
@@ -35,8 +35,8 @@ window.onload=function(){
     
         for (let prod of produse){
             prod.style.display="none";
-            let calorii= parseInt(prod.getElementsByClassName("val-calorii")[0].innerHTML)
-            let conditie1= calorii<=maxCalorii
+            let durata= parseInt(prod.getElementsByClassName("val-durata")[0].innerHTML)
+            let conditie1= durata<=maxDurata
 
             
             let pret= parseInt(prod.getElementsByClassName("val-pret")[0].innerHTML)
