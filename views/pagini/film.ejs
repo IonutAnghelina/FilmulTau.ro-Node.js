@@ -36,10 +36,9 @@
     <link rel="stylesheet" href="/resources/css/galerie-statica.css">
 	<link rel="stylesheet" href="/resources/css/print-page.css">
 	<link rel="stylesheet" href="/resources/css/galerie-animata.css" type="text/css">
-	<link rel="stylesheet" href="/resources/css/filme.css" type="text/css">
+	<link rel="stylesheet" href="/resources/css/film.css" type="text/css">
 
 </head>
-<script type="text/javascript" src="/resources/js/filme.js"></script>
 <body>
 
 	
@@ -48,59 +47,29 @@
 
 	<button id="schimbare-tema" class="light"><i class="far fa-moon" id="butonluna"></i><i class="far fa-sun" id="butonsoare"></i></button>
 	<script src="/resources/JS/tema.js"></script>
-	
+
     <main>
-		
-        
-		
-        <label> Durata maxima: <input type="number" id="inp-durata" value="300"></label>
-        <label> Pret minim: <input type="range" id="inp-pret" value="0" min="0"  max="100"></label>
-		<label>Select simplu:
-            <select id="inp-categorie">
-                <option value="toate">toate</option>
-                <% for( let categorie of locals.categorii) { %>
-                    <option value="<%- categorie.categ %>"><%- categorie.categ %></option>
-                <% } %>
-            </select>
-        </label>
-
-		<p>
-			<button id="filtrare">Filtreaza</button>
-			<button id="sortCrescNume">Sorteaza crescator dupa nume</button>
-			<button id="sortDescrescNume">Sorteaza descrescator dupa nume</button>
-			<button id="resetare">Reseteaza</button>
-		</p>
-
-		<p id="p-suma">Apasați Alt+"c" pentru suma preturilor biletelor la filmele afișate. </p>
-
-
-
-		<section id="produse">
-            <h2>Produse</h2>
-            <div class="grid-produse">
-                <% for( let prod of locals.produse) { %>
-                    <article class="produs">
-                        <h3 class="nume">Nume: <a href="/film/<%-prod.film_id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
-                        <div class="info-prod">
-                            <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>
-                            <p class="durata">Durata filmului: <span class="val-durata" style="color:red"><%- prod.durata_minute%></span></p>
-                            <p class="varsta">Varsta minima pentru vizionare: <span class="val-varsta"><%- prod.varsta_minima%></span></p>
-                        </div>
-                        <p class="categorie">Categorie:<span class="val-categorie"><%- prod.categorie%></span></p>
-                        <figure>
-                            <img src="/resources/galerie/filme/<%-prod.imagine%>" style="width:50%;height:auto;" alt="[imagine <%- prod.nume %>]" />
-                        </figure>
+        <section>
+            <h2>Pagină produs</h2>
+                <article id="art-produs">
+                    <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+                    <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
+                    <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                    <p>Cast: <span class="cast"><%- locals.prod.actori %> </span></p>
+                    <p>Durata: <span class="durata"><%- locals.prod.durate_minute %> </span></p>
+                    <p>Varsta Minima: <span class="varsta"><%- locals.prod.varsta_minima %> </span></p>
+                    <p>Categorie: <span class="categorie"><%- locals.prod.categorie %> </span></p>
+                    <p>3D: <span class="3d"><%- locals.prod.treid %> </span></p>
+                    <p>Data Difuzare: <span class="categorie"><%- locals.prod.data_difuzare %> </span></p>
+                    <figure class="imag-produs">
+                        <img  src="/resources/galerie/filme/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
+                    </figure>    
                     </article>
-                <% }%>
-            </div>
+            
         </section>
-
     </main>
-   
-    
 
     <%- include("../fragmente/footer") %>
 </body>
-
 
 </html>

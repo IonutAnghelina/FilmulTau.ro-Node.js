@@ -102,6 +102,19 @@ app.get("/filme",function(req, res){
 
     
 });
+
+app.get("/film/:id",function(req, res){
+    console.log(req.params);
+    
+    const rezultat= client.query("select * from filme where film_id="+req.params.id, function(err,rez){
+        //console.log(err, rez);
+        console.log(rez.rows);
+        res.render("pagini/film", {prod:rez.rows[0]});//obiectul {a:10,b:20} poarta numele locals in ejs  (locals["a"] sau locals.a)
+    });
+
+    
+});
+
 app.get(["/","/index"],function(req, res){//ca sa pot accesa pagina principala si cu localhost:8080 si cu localhost:8080/index
     /*
     console.log("ceva");
