@@ -93,8 +93,24 @@ window.onload=function(){
     }
 
 
+    btn=document.getElementById("suma");
+    btn.onclick=function()
+    {
+        var produse=document.getElementsByClassName("produs");
+        var sumaArt=0.0;
+        for (let prod of produse){
+            if(prod.style.display!="none")
+            sumaArt+=parseInt(prod.getElementsByClassName("val-pret")[0].innerHTML);
+        }
+        let infoSuma=document.createElement("p");//<p></p>
+        infoSuma.innerHTML="Suma biletelor selectate este: "+sumaArt;//<p>...</p>
+        infoSuma.className="info-produse";
+        let p=document.getElementById("p-suma");
+        p.parentNode.insertBefore(infoSuma,p.nextSibling);
+        setTimeout(function(){infoSuma.remove()}, 2000);
 
-    window.onkeydown=function(e){
+    }
+   /**  window.onkeydown=function(e){
         
        
         if (e.key=="c" && e.altKey){
@@ -102,7 +118,7 @@ window.onload=function(){
             var produse=document.getElementsByClassName("produs");
             sumaArt=0;
             for (let prod of produse){
-                sumaArt+=parseInt(prod.getElementsByClassName("val-pret")[0].innerHTML);
+                if(prod.style.display!="none")sumaArt+=parseInt(prod.getElementsByClassName("val-pret")[0].innerHTML);
             }
             let infoSuma=document.createElement("p");//<p></p>
             infoSuma.innerHTML="Suma: "+sumaArt;//<p>...</p>
@@ -111,6 +127,6 @@ window.onload=function(){
             p.parentNode.insertBefore(infoSuma,p.nextSibling);
             setTimeout(function(){infoSuma.remove()}, 2000);
         }
-    }
+    }**/
 
 }

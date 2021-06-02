@@ -7,7 +7,7 @@
 .galerie-a {
   width: 400px;
   height: 300px;
-  border: 4px inset black;
+  border: 4px inset navy;
   position: relative;
   overflow: hidden;
   margin-bottom: 5rem;
@@ -36,33 +36,37 @@
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
-  animation-duration: 18s;
+  animation-duration: 21s;
   transform-origin: center center;
 }
 
-#galerie-animata figure:nth-of-type(6) {
+#galerie-animata figure:nth-of-type(7) {
   /* cea mai de deasupra*/
   animation-delay: 0s;
 }
 
-#galerie-animata figure:nth-of-type(5) {
+#galerie-animata figure:nth-of-type(6) {
   animation-delay: 3s;
 }
 
-#galerie-animata figure:nth-of-type(4) {
+#galerie-animata figure:nth-of-type(5) {
   animation-delay: 6s;
 }
 
-#galerie-animata figure:nth-of-type(3) {
+#galerie-animata figure:nth-of-type(4) {
   animation-delay: 9s;
 }
 
-#galerie-animata figure:nth-of-type(2) {
+#galerie-animata figure:nth-of-type(3) {
   animation-delay: 12s;
 }
 
-#galerie-animata figure:nth-of-type(1) {
+#galerie-animata figure:nth-of-type(2) {
   animation-delay: 15s;
+}
+
+#galerie-animata figure:nth-of-type(1) {
+  animation-delay: 18s;
 }
 
 /*cum calculam timpii:
@@ -82,7 +86,7 @@ x%........3s
     opacity: 1;
   }
   /*perioada 0-5% in care se afiseaza fara efect */
-  8.3333% {
+  7.142857% {
     transform: translateX(0);
   }
   12% {
@@ -93,34 +97,27 @@ x%........3s
     z-index: 10;
     transform: translateX(50px);
   }
-  11.59% {
-    z-index: 10;
-    transform: translateX(50px);
-  }
-  11.50% {
+  13.02% {
     z-index: 10;
     transform: translateX(-200px);
   }
-  16.6664% {
-    z-index: 10;
-    transform: translateX(-200px);
-  }
-  16.6665% {
+  14.285715% {
     z-index: -10;
+    opacity: 0;
     transform: translateX(50px);
   }
-  16.6666% {
+  14.285716% {
     z-index: -10;
     opacity: 0;
     transform: translateX(0);
   }
   /* il ascund cat mai in spate sa nu vina peste imaginile care erau mai sus in html decat el*/
-  83.3332% {
+  85.714287% {
     opacity: 0;
     transform: translateX(0);
     z-index: -10;
   }
-  83.3333% {
+  85.714288% {
     z-index: 0;
   }
   /*setez z-index la 0 ca sa revina la ordinea normala de afisare*/

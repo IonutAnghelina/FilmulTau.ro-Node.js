@@ -51,8 +51,14 @@ main{
     font-weight:bold;
 }
 
-.info-produse{
+.info-prod{
     background-color: var(--bannerColor);
     padding:0.2rem;
     box-shadow: 0px 0px 0.5rem 0.15rem grey;
+}
+
+.newgrid
+{
+    display:flex;
+    flex-direction: row;
 }
