@@ -52,7 +52,7 @@
     <main>
 		
         
-		
+		<div id="filtremici">
         <label> Durata maxima: <input type="number" id="inp-durata" value="300"></label>
         <label> Pret minim: <input type="range" id="inp-pret" value="0" min="0"  max="100"></label>
 		<label>Select simplu:
@@ -64,9 +64,12 @@
             </select>
         </label>
 		
-		<label>Nume: <input type="text" id="input-nume" value="Introdu numele aici"></label>
+		<label>Nume: <input type="text" id="input-nume" value=""></label>
+		</div>
+		<label for="textarea">Introduceti actorul preferat:</label>
+		<textarea id="textarea" name="textarea" rows="4" cols="50">
 		
-		<label>Nume: <input type="textarea" id="input-textarea" value="Introdu numele aici"></label>
+		</textarea>
 		
 		<label> Select multiplu:
 			<select id="select-multiplu" multiple>
@@ -77,11 +80,17 @@
 			</select>	
 		</label>
 		
+		<p>Selectati tipul de film care va pasioneaza</p>
+
+		<div class="check">
 		<input type="checkbox" id="filme1" name="Filme noi" value="Filme noi">
 		<label for="filme1"> Filme noi</label><br>
+		</div>
+
+		<div class="check">
 		<input type="checkbox" id="filme2" name="Filme vechi" value="Filme vechi">
 		<label for="filme2"> Filme vechi</label><br>
-		
+		</div>
 		<p>
 			<button id="filtrare">Filtreaza</button>
 			<button id="sortCrescNume">Sorteaza crescator dupa pret si categorie</button>

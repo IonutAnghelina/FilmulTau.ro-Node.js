@@ -85,3 +85,22 @@ main{
         display:none;
     }
 }
+
+#textarea
+{
+    width:10em;
+}
+
+.check
+{
+    display:flex;
+    flex-direction: row;
+}
+
+#filtremici
+{
+    display:flex;
+    flex-direction:row;
+  
+}
+

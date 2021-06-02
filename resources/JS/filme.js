@@ -1,6 +1,5 @@
 /*a=10
 var raspuns=confirm("Iti place tehnici web?");
-
 console.log(raspuns)*/
 
 
@@ -20,15 +19,19 @@ window.onload=function(){
 
     let btn=document.getElementById("filtrare");
     btn.onclick=function(){
+
+
+        let cntr=0;
+
         let inp=document.getElementById("inp-durata");
-        let maxDurata = inp.value
+        let maxDurata = inp.value;
 
         
         inp=document.getElementById("inp-pret");
-        let minPret=inp.value
+        let minPret=inp.value;
 
         let sel=document.getElementById("inp-categorie");
-        let categorieSel=sel.value
+        let categorieSel=sel.value;
 
 
         var produse=document.getElementsByClassName("produs");
@@ -36,19 +39,25 @@ window.onload=function(){
         for (let prod of produse){
             prod.style.display="none";
             let durata= parseInt(prod.getElementsByClassName("val-durata")[0].innerHTML)
-            let conditie1= durata<=maxDurata
+            let conditie1= durata<=maxDurata;
 
             
             let pret= parseInt(prod.getElementsByClassName("val-pret")[0].innerHTML)
-            let conditie2= pret>=minPret
+            let conditie2= pret>=minPret;
 
             let categorieArt= prod.getElementsByClassName("val-categorie")[0].innerHTML
             let conditie3= (categorieArt==categorieSel || categorieSel=="toate");
 
             let conditieFinala=conditie1 && conditie2 && conditie3;
             if (conditieFinala)
+            
+            {
                 prod.style.display="block";
+                cntr++;
+            }
         }
+
+        if(!cntr) alert("Nu avem niciun film pe placul dumneavoastra");
     }
 
 
