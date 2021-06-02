@@ -57,8 +57,16 @@ window.onload=function(){
         var produse=document.getElementsByClassName("produs");
         let arrayProduse=Array.from(produse);
         arrayProduse.sort(function(art1,art2){
-            let nume1=art1.getElementsByClassName("val-nume")[0].innerHTML;
-            let nume2=art2.getElementsByClassName("val-nume")[0].innerHTML;
+            let nume1=art1.getElementsByClassName("val-pret")[0].innerHTML;
+            let nume2=art2.getElementsByClassName("val-pret")[0].innerHTML;
+
+            if(nume1==nume2)
+            {
+                let categorie1=art1.getElementsByClassName("val-categorie")[0].innerHTML;
+                let categorie2=art2.getElementsByClassName("val-categorie")[0].innerHTML;
+                return factor*categorie1.localeCompare(categorie2);
+            }
+            
             return factor*nume1.localeCompare(nume2);
             /*
             let rez=factor*nume1.localeCompare(nume2)

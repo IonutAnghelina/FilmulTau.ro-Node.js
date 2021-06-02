@@ -63,11 +63,29 @@
                 <% } %>
             </select>
         </label>
-
+		
+		<label>Nume: <input type="text" id="input-nume" value="Introdu numele aici"></label>
+		
+		<label>Nume: <input type="textarea" id="input-textarea" value="Introdu numele aici"></label>
+		
+		<label> Select multiplu:
+			<select id="select-multiplu" multiple>
+				<option value="toate">toate</option>
+				<% for( let categorie of locals.categorii) { %>
+                    <option value="<%- categorie.categ %>"><%- categorie.categ %></option>
+                <% } %>
+			</select>	
+		</label>
+		
+		<input type="checkbox" id="filme1" name="Filme noi" value="Filme noi">
+		<label for="filme1"> Filme noi</label><br>
+		<input type="checkbox" id="filme2" name="Filme vechi" value="Filme vechi">
+		<label for="filme2"> Filme vechi</label><br>
+		
 		<p>
 			<button id="filtrare">Filtreaza</button>
-			<button id="sortCrescNume">Sorteaza crescator dupa nume</button>
-			<button id="sortDescrescNume">Sorteaza descrescator dupa nume</button>
+			<button id="sortCrescNume">Sorteaza crescator dupa pret si categorie</button>
+			<button id="sortDescrescNume">Sorteaza descrescator dupa pret si categorie</button>
 			<button id="resetare">Reseteaza</button>
 			<button id="suma">Afiseaza suma biletelor filmelor selectate</button>
 		</p>
@@ -83,13 +101,13 @@
             <div class="grid-produse">
                 <% for( let prod of locals.produse) { %>
                     <article class="produs">
-                        <h3 class="nume">Nume: <a href="/film/<%-prod.film_id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
+                        <h3 class="nume"><b>Nume</b>: <a href="/film/<%-prod.film_id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
                         <div class="info-prod">
-                            <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>
-                            <p class="durata">Durata filmului: <span class="val-durata" style="color:red"><%- prod.durata_minute%></span></p>
-                            <p class="varsta">Varsta minima pentru vizionare: <span class="val-varsta"><%- prod.varsta_minima%></span></p>
+                            <p class="pret"><b>Pret</b>: <span class="val-pret"  style="color:red"><%- prod.pret%></span></p>
+                            <p class="durata"><b>Durata filmului</b>: <span class="val-durata" style="color:red"><%- prod.durata_minute%></span></p>
+                            <p class="varsta"><b>Varsta minima pentru vizionare</b>: <span class="val-varsta"  style="color:red"><%- prod.varsta_minima%></span></p>
                         </div>
-                        <p class="categorie">Categorie:<span class="val-categorie"><%- prod.categorie%></span></p>
+                        <p class="categorie"><b>Categorie</b>:<span class="val-categorie"><%- prod.categorie%></span></p>
                         <figure>
                             <img src="/resources/galerie/filme/<%-prod.imagine%>" style="width:50%;height:auto;" alt="[imagine <%- prod.nume %>]" />
                         </figure>

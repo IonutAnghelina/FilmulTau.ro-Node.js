@@ -1,4 +1,6 @@
 main{
+    display: flex;
+    flex-direction: column;
     --padd-main:1rem;
     padding-left:var(--padd-main);
     padding-right:var(--padd-main);
@@ -61,4 +63,25 @@ main{
 {
     display:flex;
     flex-direction: row;
+}
+
+.p-suma
+{
+    animation-name: disap;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes disap 
+{
+    0%
+    {
+        display:block;
+    }
+    100%
+    {
+        display:none;
+    }
 }
