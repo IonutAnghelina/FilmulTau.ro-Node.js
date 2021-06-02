@@ -67,12 +67,12 @@
 		<label>Nume: <input type="text" id="input-nume" value=""></label>
 		</div>
 		<label for="textarea">Introduceti actorul preferat:</label>
-		<textarea id="textarea" name="textarea" rows="4" cols="50">
+		<textarea id="input-actor" name="textarea" rows="4" cols="50">
 		
 		</textarea>
 		
 		<label> Select multiplu:
-			<select id="select-multiplu" multiple>
+			<select id="inp-multiplu" multiple>
 				<option value="toate">toate</option>
 				<% for( let categorie of locals.categorii) { %>
                     <option value="<%- categorie.categ %>"><%- categorie.categ %></option>
