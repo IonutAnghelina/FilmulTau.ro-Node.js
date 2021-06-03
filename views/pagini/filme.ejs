@@ -127,8 +127,9 @@
 		<section id="produse">
             <h2>Produse</h2>
             <div class="grid-produse">
-                <% for( let prod of locals.produse) { %>
-                    <article class="produs">
+				<%let counter=0;%>
+                <% for( let prod of locals.produse) { counter++;%>
+                    <article class="produs" id=<%-"art-".concat(counter.toString(10))%>>
                         <h3 class="nume"><b>Nume</b>: <a href="/film/<%-prod.film_id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
                         <div class="info-prod">
                             <p class="pret"><b>Pret</b>: <span class="val-pret"  style="color:red"><%- prod.pret%></span></p>

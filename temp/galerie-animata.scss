@@ -4,9 +4,9 @@ $lista_transformari: ((rotateZ(0deg),rotateZ(135deg)),(skew(0deg), skew(90deg)),
 $indice:math.random(list.length($lista_transformari));
 
 
-@use '../resources/scss/galerie_animata_frag10' with (
+@use '../resources/scss/galerie_animata_frag8' with (
 
-  $setare-server: purple
+  $setare-server: grey
 );
 
 
@@ -18,7 +18,6 @@ $indice:math.random(list.length($lista_transformari));
 {
   display:none;
 }
-
 figure
 {
     border-image:"./resources/images/border.png";

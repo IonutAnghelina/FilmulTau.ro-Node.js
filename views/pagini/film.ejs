@@ -55,7 +55,13 @@
                     <h3><span class="nume"><%- locals.prod.nume %></span></h3>
                    
                     <div id="gridinfo">
-
+                    <% 
+                    var days=["Duminica","Luni","Marti","Miercuri","Joi","Vineri","Sambata"];
+                    var months=["Ianuarie","Februarie","Martie","Aprilie","Mai","Iunie","Iulie","August","Septembrie","Octombrie","Noiembrie","Decembrie"];
+                    var currentDay=locals.prod.data_difuzare;
+                    let day=currentDay.getDay();
+                    let afis=currentDay.getDate().toString(10).concat(' ').concat(months[currentDay.getMonth()]).concat(" ").concat(currentDay.getFullYear().toString(10)).concat(" [").concat(days[day]).concat("]"); 
+                    %>
                     <p class="xpret">Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
                     <p class="xdescriere">Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
                     <p class="xcast">Cast: <span class="cast"><%- locals.prod.actori %> </span></p>
@@ -63,7 +69,7 @@
                     <p class="xvarsta">Varsta Minima: <span class="varsta"><%- locals.prod.varsta_minima %> </span></p>
                     <p class="xcategorie">Categorie: <span class="categorie"><%- locals.prod.categorie %> </span></p>
                     <p class="xtreid">3D: <span class="treid"><%- locals.prod.treid %> </span></p>
-                    <p class="xdata">Data Difuzare: <span class="data"><time><%- locals.prod.data_difuzare %> </time></span></p>
+                    <p class="xdata">Data Difuzare: <span class="data"><time><%- afis %> </time></span></p>
 
 
                     
