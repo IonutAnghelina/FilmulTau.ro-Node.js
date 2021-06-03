@@ -101,6 +101,12 @@
 		<input type="radio" id="clasic" name="tip-film" value="clasic">
 		<label for="clasic">Clasic</label><br>
 		</div>
+
+
+		<div class="radiobutton">
+		<input type="radio" id="oricare" name="tip-film" value="oricare" checked>
+		<label for="oricare">Oricare</label><br>
+		</div>
 		<p>
 			<button id="filtrare">Filtreaza</button>
 			<button id="sortCrescNume">Sorteaza crescator dupa pret si categorie</button>
@@ -126,6 +132,8 @@
                             <p class="durata"><b>Durata filmului</b>: <span class="val-durata" style="color:red"><%- prod.durata_minute%></span></p>
                             <p class="varsta"><b>Varsta minima pentru vizionare</b>: <span class="val-varsta"  style="color:red"><%- prod.varsta_minima%></span></p>
 							<p class="hidden"><b>3D</b>: <span class="val-treid"  style="color:red"><%- prod.treid%></span></p>	
+							<p class="hidden"><b>Nume</b>: <span class="val-nume2"  style="color:red"><%- prod.nume%></span></p>	
+							<p class="hidden"><b>Nou-Vechi</b>: <span class="val-nv"  style="color:red"><%- prod.tip%></span></p>	
 						</div>
                         <p class="categorie"><b>Categorie</b>:<span class="val-categorie"><%- prod.categorie%></span></p>
                         <figure>

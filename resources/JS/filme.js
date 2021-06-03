@@ -2,8 +2,6 @@
 var raspuns=confirm("Iti place tehnici web?");
 console.log(raspuns)*/
 
-
-
 window.onload=function(){
 
     var rng=document.getElementById("inp-pret");
@@ -33,18 +31,30 @@ window.onload=function(){
         let sel=document.getElementById("inp-categorie");
         let categorieSel=sel.value;
 
-        sel=document.getElementById("input-nume");
-        let numeFilm=sel.value;
-        
+        sel2=document.getElementById("input-nume");
+        let numeFilm=sel2.value;
+       // alert(numeFilm);
+
         var getSelectedValue = document.querySelector('input[name="tip-film"]:checked');
         //console.log(getSelectedValue.value);
-        let isIt3d="neutral";
-        if(getSelectedValue.value=='treid')
-            isIt3d="true";
+        let isIt3d;
+        isIt3d="neutral";
+        if(getSelectedValue.value=="treid")
+            {isIt3d="true";}
         else 
         if (getSelectedValue.value=="clasic")
-            isIt3d="false";
+            {isIt3d="false";}
+        else
+            {isIt3d='neutral';}
 
+        if(isIt3d!="false" && isIt3d!="true")
+            isIt3d="neutral";
+
+       // alert(isIt3d);
+        let butonFN=document.getElementById("filme1");
+        let butonFV=document.getElementById("filme2");
+
+       
 
       //  sel=document.getElementById("inp-multiplu");
        // let categorii=sel.value;
@@ -71,8 +81,15 @@ window.onload=function(){
             let conditie3= (categorieArt==categorieSel || categorieSel=="toate");
             
             let treidA=prod.getElementsByClassName("val-treid")[0].innerHTML;
-            let conditie4= ((treidA=="true" && isIt3d=="true") || (treidA=="false" && isIt3d=="false") || isIt3d=="neutral");
-            let conditieFinala=conditie1 && conditie2 && conditie3 && conditie4;
+            let conditie4= ((treidA=="true" && isIt3d=="true") || (treidA=="false" && isIt3d=="false") || (isIt3d=="neutral"));
+
+            let valNV=prod.getElementsByClassName("val-nv")[0].innerHTML;
+            let conditie5=((!butonFN.checked && !butonFV.checked) || (valNV=="filme noi" && butonFN.checked) || (valNV=="filme vechi" && butonFV.checked))
+           
+            let conditieFinala=(conditie1 && conditie2 && conditie3 && conditie4 && conditie5);
+
+
+            
             if (conditieFinala)
             
             {
@@ -108,7 +125,7 @@ window.onload=function(){
             return rez;
             */
         });
-        console.log(arrayProduse); 
+       // console.log(arrayProduse); 
         for (let prod of arrayProduse){
             prod.parentNode.appendChild(prod);
         }
