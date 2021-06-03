@@ -104,3 +104,8 @@ main{
   
 }
 
+.butoaneradio
+{
+    display:flex;
+    flex-direction: row;
+}

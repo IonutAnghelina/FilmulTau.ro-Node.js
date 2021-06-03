@@ -33,8 +33,8 @@ window.onload=function(){
         let sel=document.getElementById("inp-categorie");
         let categorieSel=sel.value;
 
-        let sel=document.getElementById("input-nume");
-        let numeFilm=sel.value;
+       // let sel=document.getElementById("input-nume");
+      //  let numeFilm=sel.value;
         
         var produse=document.getElementsByClassName("produs");
     
