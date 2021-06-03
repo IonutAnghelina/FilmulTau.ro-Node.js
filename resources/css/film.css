@@ -39,3 +39,61 @@ h2{
         width:95%;
     }
 }
+
+.pret
+{
+    grid-area:pret;
+}
+
+.descriere
+{
+    grid-area:descriere;
+}
+
+.xcast
+{
+    grid-area:cast;
+}
+
+.xdurata
+{
+    grid-area: durata;
+}
+
+.xvarsta
+{
+    grid-area:varsta;
+}
+
+.xcategorie
+{
+    grid-area:categorie;
+}
+.xtreid
+{
+    grid-area:treid;
+}
+
+.xdata
+{
+    grid-area:data;
+}
+.imag-produs
+{
+    grid-area:imag-produs;
+}
+
+#gridinfo
+{
+    display:grid;
+    grid-template-areas:"pret categorie"    
+                        "cast descriere" 
+                        "data descriere"  
+                        "treid ."
+                        "varsta ." 
+                        "durata ."
+                        "imag-produs ."
+                        "imag-produs ."
+                        "imag-produs .";
+    
+}

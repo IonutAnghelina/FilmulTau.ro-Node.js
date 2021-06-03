@@ -33,9 +33,21 @@ window.onload=function(){
         let sel=document.getElementById("inp-categorie");
         let categorieSel=sel.value;
 
-       // let sel=document.getElementById("input-nume");
-      //  let numeFilm=sel.value;
+        sel=document.getElementById("input-nume");
+        let numeFilm=sel.value;
         
+       
+
+      //  sel=document.getElementById("inp-multiplu");
+       // let categorii=sel.value;
+        
+        //alert(categorii);
+
+        //sel=document.getElementById("filme1");
+        //let filmeNoi=sel.value;
+
+        
+
         var produse=document.getElementsByClassName("produs");
     
         for (let prod of produse){

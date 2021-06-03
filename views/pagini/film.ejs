@@ -53,17 +53,26 @@
             <h2>Pagină produs</h2>
                 <article id="art-produs">
                     <h3><span class="nume"><%- locals.prod.nume %></span></h3>
-                    <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
-                    <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
-                    <p>Cast: <span class="cast"><%- locals.prod.actori %> </span></p>
-                    <p>Durata: <span class="durata"><%- locals.prod.durate_minute %> </span></p>
-                    <p>Varsta Minima: <span class="varsta"><%- locals.prod.varsta_minima %> </span></p>
-                    <p>Categorie: <span class="categorie"><%- locals.prod.categorie %> </span></p>
-                    <p>3D: <span class="3d"><%- locals.prod.treid %> </span></p>
-                    <p>Data Difuzare: <span class="categorie"><%- locals.prod.data_difuzare %> </span></p>
+                   
+                    <div id="gridinfo">
+
+                    <p class="xpret">Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
+                    <p class="xdescriere">Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                    <p class="xcast">Cast: <span class="cast"><%- locals.prod.actori %> </span></p>
+                    <p class="xdurata">Durata: <span class="durata"><%- locals.prod.durata_minute %> </span></p>                   
+                    <p class="xvarsta">Varsta Minima: <span class="varsta"><%- locals.prod.varsta_minima %> </span></p>
+                    <p class="xcategorie">Categorie: <span class="categorie"><%- locals.prod.categorie %> </span></p>
+                    <p class="xtreid">3D: <span class="treid"><%- locals.prod.treid %> </span></p>
+                    <p class="xdata">Data Difuzare: <span class="data"><time><%- locals.prod.data_difuzare %> </time></span></p>
+
+
+                    
                     <figure class="imag-produs">
                         <img  src="/resources/galerie/filme/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
                     </figure>    
+                    
+                    </div>
+                    
                     </article>
             
         </section>
