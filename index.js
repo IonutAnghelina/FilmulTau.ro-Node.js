@@ -87,13 +87,13 @@ app.get("/filme",function(req, res){
     //console.log("Query:", req.query.tip);
     // conditie_booleana? val_true : val_false
     let conditie= req.query.tip ?  " and tip_produs='"+req.query.tip+"'" : "";//daca am parametrul tip in cale (tip=cofetarie, de exemplu) adaug conditia pentru a selecta doar produsele de acel tip
-    console.log("select * from filme where 1=1"+conditie);
+   // console.log("select * from filme where 1=1"+conditie);
     client.query("select * from filme where 1=1"+conditie, function(err,rez){
-        console.log(err, rez);
+        //console.log(err, rez);
         //console.log(rez.rows);
         client.query("select unnest(enum_range( null::categ_film)) as categ", function(err,rezCateg){//selectez toate valorile posibile din enum-ul categ_prajitura
 
-            console.log(rezCateg);
+           // console.log(rezCateg);
             res.render("pagini/filme", {produse:rez.rows, categorii:rezCateg.rows});//obiectul {a:10,b:20} poarta numele locals in ejs  (locals["a"] sau locals.a)
             });
         
@@ -104,11 +104,12 @@ app.get("/filme",function(req, res){
 });
 
 app.get("/film/:id",function(req, res){
-    console.log(req.params);
+  
+  //  console.log(req.params);
     
     const rezultat= client.query("select * from filme where film_id="+req.params.id, function(err,rez){
         //console.log(err, rez);
-        console.log(rez.rows);
+        //console.log(rez.rows);
         res.render("pagini/film", {prod:rez.rows[0]});//obiectul {a:10,b:20} poarta numele locals in ejs  (locals["a"] sau locals.a)
     });
 
@@ -142,7 +143,7 @@ app.get("*/galerie-animata.css",function(req, res){
     culori=["navy","black","purple","grey"]
     let culoareAleatoare =culori[Math.floor(Math.random()*culori.length)];//iau o culoare aleatoare pentru border
     let rezScss=ejs.render(sirScss,{culoare:culoareAleatoare});// transmit culoarea catre scss si obtin sirul cu scss-ul compilat
-    console.log(rezScss);
+    //console.log(rezScss);
     fs.writeFileSync("./temp/galerie-animata.scss",rezScss);//scriu scss-ul intr-un fisier temporar
     exec("sass ./temp/galerie-animata.scss ./temp/galerie-animata.css", (error, stdout, stderr) => {//execut comanda sass (asa cum am executa in cmd sau PowerShell)
         if (error) {
@@ -236,20 +237,20 @@ app.get("*/galerie-animata.css",function(req, res){
     culori=["navy","black","purple","grey"]
     let culoareAleatoare =culori[Math.floor(Math.random()*culori.length)];//iau o culoare aleatoare pentru border
     let rezScss=ejs.render(sirScss,{culoare:culoareAleatoare});// transmit culoarea catre scss si obtin sirul cu scss-ul compilat
-    console.log(rezScss);
+  //  console.log(rezScss);
     fs.writeFileSync("./temp/galerie-animata.scss",rezScss);//scriu scss-ul intr-un fisier temporar
     exec("sass ./temp/galerie-animata.scss ./temp/galerie-animata.css", (error, stdout, stderr) => {//execut comanda sass (asa cum am executa in cmd sau PowerShell)
         if (error) {
-            console.log(`error: ${error.message}`);
+           // console.log(`error: ${error.message}`);
             res.end();//termin transmisiunea in caz de eroare
             return;
         }
         if (stderr) {
-            console.log(`stderr: ${stderr}`);
+           // console.log(`stderr: ${stderr}`);
             res.end();
             return;
         }
-        console.log(`stdout: ${stdout}`);
+       // console.log(`stdout: ${stdout}`);
         //totul a fost bine, trimit fisierul rezultat din compilarea scss
         res.sendFile(path.join(__dirname,"temp/galerie-animata.css"));
     });

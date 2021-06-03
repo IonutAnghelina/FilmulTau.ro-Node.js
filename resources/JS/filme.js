@@ -4,16 +4,18 @@ console.log(raspuns)*/
 function checkStrings (s, t) {
     
     let aux=s;
- 
+    
     for(let i=0;i<s.length-1;i++)
     {
         aux=s.slice(0,i).concat(s[i+1]).concat(s[i])+s.slice(i+2,s.length);
+        aux=aux.toLowerCase();
         console.log(aux);
-        if(aux.localeCompare(t)==0)
+        if(aux.localeCompare(t.toLowerCase())==0)
             return 1;
     }
     return 0;
 }
+
 window.onload=function(){
 
     var rng=document.getElementById("inp-pret");
@@ -66,8 +68,20 @@ window.onload=function(){
         let butonFN=document.getElementById("filme1");
         let butonFV=document.getElementById("filme2");
 
-       
+        let selected = document.querySelectorAll('#inp-multiplu option:checked');
+        let values = Array.from(selected).map(el => el.value);
+        //alert(values[0]);
+        let minimV=parseInt(20);
 
+       // alert(values[0]);
+      // alert(values.length); 
+       for(let idx=0;idx<values.length;idx++)
+        {
+            if(values[idx]!='18+' && parseInt(values[idx])<minimV) 
+                minimV=parseInt(values[idx]);
+        }
+
+        //alert(minimV);
       //  sel=document.getElementById("inp-multiplu");
        // let categorii=sel.value;
         
@@ -100,10 +114,12 @@ window.onload=function(){
             
             let numeCurent=prod.getElementsByClassName("val-nume")[0].innerHTML;
             let conditie6=(numeFilm=="" || numeCurent.localeCompare(numeFilm)==0 || checkStrings(numeFilm,numeCurent))
-            let conditieFinala=(conditie1 && conditie2 && conditie3 && conditie4 && conditie5 && conditie6);
-
-
             
+
+            let varsta=parseInt(prod.getElementsByClassName("val-varsta")[0].innerHTML);
+            
+            let conditie7=(minimV>=varsta);
+            let conditieFinala=(conditie1 && conditie2 && conditie3 && conditie4 && conditie5 && conditie6 && conditie7);
             if (conditieFinala)
             
             {

@@ -71,11 +71,12 @@
 		
 		</textarea>
 		
-		<label> Select multiplu:
+		<label> Selectati varstele persoanelor din grupul dumneavoastra de prieteni:
+
 			<select id="inp-multiplu" multiple>
-				<option value="toate">toate</option>
-				<% for( let categorie of locals.categorii) { %>
-                    <option value="<%- categorie.categ %>"><%- categorie.categ %></option>
+				<option value="18+" selected>18+</option>
+				<% for( let i=0;i<=17;i++) { %>
+                    <option value="<%-i%>"><%-i %></option>
                 <% } %>
 			</select>	
 		</label>
@@ -91,6 +92,8 @@
 		<input type="checkbox" id="filme2" name="Filme vechi" value="Filme vechi">
 		<label for="filme2"> Filme vechi</label><br>
 		</div>
+
+		<p>Selectati experienta filmului pe care o preferati</p>
 
 		<div class="radiobutton">
 		<input type="radio" id="treid" name="tip-film" value="treid">
