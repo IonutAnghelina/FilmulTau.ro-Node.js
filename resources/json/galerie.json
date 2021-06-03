@@ -65,6 +65,27 @@
             "text_descriere":"Cinema Primavara",
             "anotimp":"primavara",
             "license":"archdaily.com"
+        },
+        {
+            "cale_fisier":"cinema11_400x300.jpg",
+            "titlu":"Cinema Antic Vara",
+            "text_descriere":"Cinema Antic Vara",
+            "anotimp":"vara",
+            "licents":"CC0"
+        },
+        {
+            "cale_fisier":"cinema112_400x300.jpg",
+            "titlu":"Cinema Modern Primavara",
+            "text_descriere":"Cinema Modern Primavara",
+            "anotimp":"primavara",
+            "licents":"CC0"
+        },
+        {
+            "cale_fisier":"cinema113_400x300.jpg",
+            "titlu":"Cinema Modern Vara",
+            "text_descriere":"Cinema Modern Vara",
+            "anotimp":"vara",
+            "licents":"CC0"
         }
         
 
