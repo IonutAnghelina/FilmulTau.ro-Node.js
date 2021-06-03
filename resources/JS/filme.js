@@ -99,7 +99,7 @@ window.onload=function(){
             let conditie5=((!butonFN.checked && !butonFV.checked) || (valNV=="filme noi" && butonFN.checked) || (valNV=="filme vechi" && butonFV.checked))
             
             let numeCurent=prod.getElementsByClassName("val-nume")[0].innerHTML;
-            let conditie6=(numeFilm=="" || checkStrings(numeCurent,numeFilm))
+            let conditie6=(numeFilm=="" || numeCurent.localeCompare(numeFilm)==0 || checkStrings(numeFilm,numeCurent))
             let conditieFinala=(conditie1 && conditie2 && conditie3 && conditie4 && conditie5 && conditie6);
 
 
