@@ -172,7 +172,16 @@ window.onload=function(){
 
     btn=document.getElementById("resetare");
     btn.onclick=function(){
-        
+        document.getElementById("input-nume").value="";
+        document.getElementById("oricare").checked=true;
+        document.getElementById("filme1").checked=false;
+        document.getElementById("filme2").checked=false;
+        document.getElementById("inp-pret").value="0";
+        document.getElementById("inp-durata").value="300";
+
+        document.getElementById("inp-categorie").selectedIndex=0;
+        document.getElementById("input-actor").value="";
+        document.getElementById("inp-multiplu").selectedIndex=0;
         var produse=document.getElementsByClassName("produs");
     
         for (let prod of produse){
