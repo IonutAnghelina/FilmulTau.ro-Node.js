@@ -49,6 +49,9 @@ window.onload=function(){
         let numeFilm=sel2.value;
        // alert(numeFilm);
 
+        let textAreaVal=document.getElementById("input-actor").value;
+        //textAreaVal="Vin Diesel";
+       // alert(textAreaVal);
         var getSelectedValue = document.querySelector('input[name="tip-film"]:checked');
         //console.log(getSelectedValue.value);
         let isIt3d;
@@ -119,7 +122,23 @@ window.onload=function(){
             let varsta=parseInt(prod.getElementsByClassName("val-varsta")[0].innerHTML);
             
             let conditie7=(minimV>=varsta);
-            let conditieFinala=(conditie1 && conditie2 && conditie3 && conditie4 && conditie5 && conditie6 && conditie7);
+            
+
+            let ok=0;
+            let listaActori=prod.getElementsByClassName("hiddenact");
+            
+            for(let i=0;i<listaActori.length;i++)
+            {
+                if(listaActori[i].innerHTML==textAreaVal)
+                {
+                    ok=1;
+                    break;
+                }
+            }
+            let conditie8=(textAreaVal=="" || ok==1);
+
+
+            let conditieFinala=(conditie1 && conditie2 && conditie3 && conditie4 && conditie5 && conditie6 && conditie7 && conditie8);
             if (conditieFinala)
             
             {

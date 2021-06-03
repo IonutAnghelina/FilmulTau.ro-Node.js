@@ -137,7 +137,11 @@
                             <p class="varsta"><b>Varsta minima pentru vizionare</b>: <span class="val-varsta"  style="color:red"><%- prod.varsta_minima%></span></p>
 							<p class="hidden"><b>3D</b>: <span class="val-treid"  style="color:red"><%- prod.treid%></span></p>	
 							<p class="hidden"><b>Nume</b>: <span class="val-nume2"  style="color:red"><%- prod.nume%></span></p>	
-							<p class="hidden"><b>Nou-Vechi</b>: <span class="val-nv"  style="color:red"><%- prod.tip%></span></p>	
+							<p class="hidden"><b>Nou-Vechi</b>: <span class="val-nv"  style="color:red"><%- prod.tip%></span></p>
+							<%for(let i=0;i<prod.actori.length;i++){%>	
+								<p class="hiddenact"><%- prod.actori[i]%></p>
+								<%}%>
+							
 						</div>
                         <p class="categorie"><b>Categorie</b>:<span class="val-categorie"><%- prod.categorie%></span></p>
                         <figure>
