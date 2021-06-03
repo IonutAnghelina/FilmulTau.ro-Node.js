@@ -104,7 +104,7 @@ main{
   
 }
 
-.butoaneradio
+.radiobutton
 {
     display:flex;
     flex-direction: row;
