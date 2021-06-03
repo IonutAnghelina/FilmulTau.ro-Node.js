@@ -36,7 +36,15 @@ window.onload=function(){
         sel=document.getElementById("input-nume");
         let numeFilm=sel.value;
         
-       
+        var getSelectedValue = document.querySelector('input[name="tip-film"]:checked');
+        //console.log(getSelectedValue.value);
+        let isIt3d="neutral";
+        if(getSelectedValue.value=='treid')
+            isIt3d="true";
+        else 
+        if (getSelectedValue.value=="clasic")
+            isIt3d="false";
+
 
       //  sel=document.getElementById("inp-multiplu");
        // let categorii=sel.value;
@@ -61,8 +69,10 @@ window.onload=function(){
 
             let categorieArt= prod.getElementsByClassName("val-categorie")[0].innerHTML
             let conditie3= (categorieArt==categorieSel || categorieSel=="toate");
-
-            let conditieFinala=conditie1 && conditie2 && conditie3;
+            
+            let treidA=prod.getElementsByClassName("val-treid")[0].innerHTML;
+            let conditie4= ((treidA=="true" && isIt3d=="true") || (treidA=="false" && isIt3d=="false") || isIt3d=="neutral");
+            let conditieFinala=conditie1 && conditie2 && conditie3 && conditie4;
             if (conditieFinala)
             
             {
