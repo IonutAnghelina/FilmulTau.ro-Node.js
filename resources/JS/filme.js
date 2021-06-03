@@ -1,17 +1,19 @@
 /*a=10
 var raspuns=confirm("Iti place tehnici web?");
 console.log(raspuns)*/
-function levenshteinDistance (s, t) {
-    if (!s.length) return t.length;
-    if (!t.length) return s.length;
-
-    return Math.min(
-        levenshteinDistance(s.substr(1), t) + 1,
-        levenshteinDistance(t.substr(1), s) + 1,
-        levenshteinDistance(s.substr(1), t.substr(1)) + (s[0] !== t[0] ? 1 : 0)
-    ) + 1;
+function checkStrings (s, t) {
+    
+    let aux=s;
+ 
+    for(let i=0;i<s.length-1;i++)
+    {
+        aux=s.slice(0,i).concat(s[i+1]).concat(s[i])+s.slice(i+2,s.length);
+        console.log(aux);
+        if(aux.localeCompare(t)==0)
+            return 1;
+    }
+    return 0;
 }
-
 window.onload=function(){
 
     var rng=document.getElementById("inp-pret");
@@ -97,7 +99,7 @@ window.onload=function(){
             let conditie5=((!butonFN.checked && !butonFV.checked) || (valNV=="filme noi" && butonFN.checked) || (valNV=="filme vechi" && butonFV.checked))
             
             let numeCurent=prod.getElementsByClassName("val-nume")[0].innerHTML;
-            let conditie6=(numeFilm=="" || numeCurent.localeCompare(numeFilm)==0)
+            let conditie6=(numeFilm=="" || checkStrings(numeCurent,numeFilm))
             let conditieFinala=(conditie1 && conditie2 && conditie3 && conditie4 && conditie5 && conditie6);
 
 
