@@ -168,11 +168,11 @@ window.onload=function(){
             let pret= parseInt(prod.getElementsByClassName("val-pret")[0].innerHTML)
             let conditie2= pret>=minPret;
 
-            let categorieArt= prod.getElementsByClassName("val-categorie")[0].innerHTML
-            let conditie3= (categorieArt==categorieSel || categorieSel=="toate");
+         //   let categorieArt= prod.getElementsByClassName("val-categorie")[0].innerHTML
+         //   let conditie3= (categorieArt==categorieSel || categorieSel=="toate");
             
-           // let treidA=prod.getElementsByClassName("val-treid")[0].innerHTML;
-            //let conditie4= ((treidA=="true" && isIt3d=="true") || (treidA=="false" && isIt3d=="false") || (isIt3d=="neutral"));
+            let treidA=prod.getElementsByClassName("val-treid")[0].innerHTML;
+            let conditie4= ((treidA=="true" && categorieSel=="3D") || (treidA=="false" && categorieSel=="clasice") || (categorieSel=="oricare"));
 
             let valNV=prod.getElementsByClassName("val-nv")[0].innerHTML;
             let conditie5=((!butonFN.checked && !butonFV.checked) || (valNV=="filme noi" && butonFN.checked) || (valNV=="filme vechi" && butonFV.checked))
@@ -221,7 +221,7 @@ window.onload=function(){
             let conditie11=((michelle=="neutral") || (michelle=="da" && ok3==1) || (michelle=="nu" && ok3==0));
             let conditie12=((luisStan=="neutral") || (luisStan=="da" && ok4==1) || (luisStan=="nu" && ok4==0));
             let conditie13=((tomCruise=="neutral") || (tomCruise=="da" && ok5==1) || (tomCruise=="nu" && ok5==0));
-            let conditieFinala=(conditie1 && conditie2 && conditie3 && conditie5 && conditie6 && conditie7  && conditie9 && conditie10 &&  conditie11 && conditie12 && conditie13);
+            let conditieFinala=(conditie1 && conditie2 && conditie4 && conditie5 && conditie6 && conditie7  && conditie9 && conditie10 &&  conditie11 && conditie12 && conditie13);
             
             if (conditieFinala)
             
