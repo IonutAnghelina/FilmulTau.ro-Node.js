@@ -52,21 +52,83 @@ window.onload=function(){
         let textAreaVal=document.getElementById("input-actor").value;
         //textAreaVal="Vin Diesel";
        // alert(textAreaVal);
-        var getSelectedValue = document.querySelector('input[name="tip-film"]:checked');
+       
+        
+        //Primul filtru de actor
+        var getSelectedValue1 = document.querySelector('input[name="radio1"]:checked');
         //console.log(getSelectedValue.value);
-        let isIt3d;
-        isIt3d="neutral";
-        if(getSelectedValue.value=="treid")
-            {isIt3d="true";}
+        var vinDiesel;
+    
+
+        vinDiesel="neutral";
+        if(getSelectedValue1.value=="da")
+            {vinDiesel="da";}
         else 
-        if (getSelectedValue.value=="clasic")
-            {isIt3d="false";}
+        if (getSelectedValue1.value=="nu")
+            {vinDiesel="nu";}
         else
-            {isIt3d='neutral';}
+            {vinDiesel='neutral';}
 
-        if(isIt3d!="false" && isIt3d!="true")
-            isIt3d="neutral";
+        if(vinDiesel!="nu" && vinDiesel!="da")
+            vinDiesel="neutral";
 
+        getSelectedValue1 = document.querySelector('input[name="radio2"]:checked');
+        var lebron;
+        lebron="neutral";
+        if(getSelectedValue1.value=="da")
+            {lebron="da";}
+        else 
+        if (getSelectedValue1.value=="nu")
+            {lebron="nu";}
+        else
+            {lebron='neutral';}
+
+        if(lebron!="nu" && lebron!="da")
+             lebron="neutral";
+
+        getSelectedValue1 = document.querySelector('input[name="radio3"]:checked');
+        var michelle;
+        michelle="neutral";
+        if(getSelectedValue1.value=="da")
+            {michelle="da";}
+        else 
+        if (getSelectedValue1.value=="nu")
+            {michelle="nu";}
+        else
+            {michelle='neutral';}
+
+        if(michelle!="nu" && michelle!="da")
+            michelle="neutral";
+
+        getSelectedValue1 = document.querySelector('input[name="radio4"]:checked');
+        var luisStan;
+        luisStan="neutral";
+        if(getSelectedValue1.value=="da")
+            {luisStan="da";}
+        else 
+        if (getSelectedValue1.value=="nu")
+            {luisStan="nu";}
+        else
+            {luisStan='neutral';}
+
+        if(luisStan!="nu" && luisStan!="da")
+            luisStan="neutral";
+
+
+        getSelectedValue1 = document.querySelector('input[name="radio5"]:checked');
+        var tomCruise;
+        tomCruise="neutral";
+        if(getSelectedValue1.value=="da")
+            {tomCruise="da";}
+        else 
+        if (getSelectedValue1.value=="nu")
+            {tomCruise="nu";}
+        else
+            {tomCruise='neutral';}
+
+        if(tomCruise!="nu" && tomCruise!="da")
+            tomCruise="neutral";    
+        //alert(vinDiesel);
        // alert(isIt3d);
         let butonFN=document.getElementById("filme1");
         let butonFV=document.getElementById("filme2");
@@ -109,8 +171,8 @@ window.onload=function(){
             let categorieArt= prod.getElementsByClassName("val-categorie")[0].innerHTML
             let conditie3= (categorieArt==categorieSel || categorieSel=="toate");
             
-            let treidA=prod.getElementsByClassName("val-treid")[0].innerHTML;
-            let conditie4= ((treidA=="true" && isIt3d=="true") || (treidA=="false" && isIt3d=="false") || (isIt3d=="neutral"));
+           // let treidA=prod.getElementsByClassName("val-treid")[0].innerHTML;
+            //let conditie4= ((treidA=="true" && isIt3d=="true") || (treidA=="false" && isIt3d=="false") || (isIt3d=="neutral"));
 
             let valNV=prod.getElementsByClassName("val-nv")[0].innerHTML;
             let conditie5=((!butonFN.checked && !butonFV.checked) || (valNV=="filme noi" && butonFN.checked) || (valNV=="filme vechi" && butonFV.checked))
@@ -126,10 +188,26 @@ window.onload=function(){
 
             let ok=0;
             let listaActori=prod.getElementsByClassName("hiddenact");
-            
+            let ok1=0;
+            let ok2=0;
+            let ok3=0;
+            let ok4=0;
+            let ok5=0;
+            //okDict[1]=okDict[2]=0;
+
             for(let i=0;i<listaActori.length;i++)
             {
-                if(listaActori[i].innerHTML==textAreaVal)
+                if(listaActori[i].innerHTML.localeCompare("Vin Diesel")==0)
+                    ok1=1;
+                if(listaActori[i].innerHTML.localeCompare("LeBron James")==0)
+                    ok2=1;
+                if(listaActori[i].innerHTML.localeCompare("Michelle Rodriguez")==0)
+                    ok3=1;
+                if(listaActori[i].innerHTML.localeCompare("Lewis Tan")==0)
+                    ok4=1;
+                if(listaActori[i].innerHTML.localeCompare("Tom Cruise")==0)
+                    ok5=1;
+                if(listaActori[i].innerHTML.localeCompare(textAreaVal)==0)
                 {
                     ok=1;
                     break;
@@ -137,8 +215,14 @@ window.onload=function(){
             }
             let conditie8=(textAreaVal=="" || ok==1);
 
-
-            let conditieFinala=(conditie1 && conditie2 && conditie3 && conditie4 && conditie5 && conditie6 && conditie7 && conditie8);
+            let conditie9=((vinDiesel=="neutral") || (vinDiesel=="da" && ok1==1) || (vinDiesel=="nu" && ok1==0));
+            
+            let conditie10=((lebron=="neutral") || (lebron=="da" && ok2==1) || (lebron=="nu" && ok2==0));
+            let conditie11=((michelle=="neutral") || (michelle=="da" && ok3==1) || (michelle=="nu" && ok3==0));
+            let conditie12=((luisStan=="neutral") || (luisStan=="da" && ok4==1) || (luisStan=="nu" && ok4==0));
+            let conditie13=((tomCruise=="neutral") || (tomCruise=="da" && ok5==1) || (tomCruise=="nu" && ok5==0));
+            let conditieFinala=(conditie1 && conditie2 && conditie3 && conditie5 && conditie6 && conditie7  && conditie9 && conditie10 &&  conditie11 && conditie12 && conditie13);
+            
             if (conditieFinala)
             
             {
@@ -192,9 +276,9 @@ window.onload=function(){
     btn=document.getElementById("resetare");
     btn.onclick=function(){
         document.getElementById("input-nume").value="";
-        document.getElementById("oricare").checked=true;
-        document.getElementById("filme1").checked=false;
-        document.getElementById("filme2").checked=false;
+        for(let i=0;i<5;i++)
+            {document.getElementsByClassName("oricare")[i].checked=true;}
+        
         document.getElementById("inp-pret").value="0";
         document.getElementById("inp-durata").value="300";
 

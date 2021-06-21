@@ -8,17 +8,32 @@
 /* implicit meniul e ascuns*/
 
 ul.meniu {
-    display: none;
+    opacity: 0;
     position: absolute;
     width: 100%;
 }
 
-
+@keyframes dropdown {
+    0% {
+      opacity: 1;
+      height: 0;
+    }
+    100% {
+      opacity: 1;
+      height: 3em;
+    }
+  }
 /*aici facem vizibil meniul cand faem click pe hamburger meniu*/
 
 #ch-menu:checked+ul.meniu {
-    display: block;
+    
+    animation-name:dropdown;
+    animation-iteration-count: 1;
+    animation-duration: 0.4s;
+    animation-fill-mode:forwards;
+    animation-timing-function: linear;
 }
+
 
 
 /*optiunile se intind pe toata latimea containerului*/

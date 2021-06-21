@@ -7,7 +7,7 @@ const {Client} =require('pg');
 const url = require('url');
 const { exec } = require("child_process");
 const ejs=require('ejs');
-
+const regex=require('regex');
 var app=express();//am creat serverul
 
 var animLimit;
