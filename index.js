@@ -86,8 +86,8 @@ app.get("/filme",function(req, res){
     //console.log("Url:",req.url);
     //console.log("Query:", req.query.tip);
     // conditie_booleana? val_true : val_false
-    let conditie= req.query.tip ?  " and tip_produs='"+req.query.tip+"'" : "";//daca am parametrul tip in cale (tip=cofetarie, de exemplu) adaug conditia pentru a selecta doar produsele de acel tip
-   // console.log("select * from filme where 1=1"+conditie);
+    let conditie= req.query.categorie ?  " and categorie='"+req.query.categorie+"'" : "";//daca am parametrul tip in cale (tip=cofetarie, de exemplu) adaug conditia pentru a selecta doar produsele de acel tip
+    console.log("select * from filme where 1=1"+conditie);
     client.query("select * from filme where 1=1"+conditie, function(err,rez){
         //console.log(err, rez);
         //console.log(rez.rows);
@@ -102,6 +102,8 @@ app.get("/filme",function(req, res){
 
     
 });
+
+
 
 app.get("/film/filme",function(req, res){
     // console.log("Pagina de filme");
@@ -125,6 +127,8 @@ app.get("/film/filme",function(req, res){
  
      
  });
+
+ 
 
 app.get("/film/:id",function(req, res){
   

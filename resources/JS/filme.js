@@ -172,8 +172,8 @@ window.onload=function(){
          //   let conditie3= (categorieArt==categorieSel || categorieSel=="toate");
             
             let treidA=prod.getElementsByClassName("val-treid")[0].innerHTML;
-            let conditie4= ((treidA=="true" && categorieSel=="3D") || (treidA=="false" && categorieSel=="clasice") || (categorieSel=="oricare"));
-
+            let conditie4= ((treidA=="true" && categorieSel=="3D") || (treidA=="false" && categorieSel=="clasice") || (categorieSel=="toate"));
+           // alert(categorieSel);
             let valNV=prod.getElementsByClassName("val-nv")[0].innerHTML;
             let conditie5=((!butonFN.checked && !butonFV.checked) || (valNV=="filme noi" && butonFN.checked) || (valNV=="filme vechi" && butonFV.checked))
             

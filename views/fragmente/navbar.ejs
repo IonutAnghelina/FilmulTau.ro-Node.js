@@ -24,13 +24,22 @@
     
         <li><div class="mainOption">Despre Noi</div>
             <ul>                        
-                <li class="dropdown"><a href="prezentare" class="suboption">Prezentare</a></li>
-                <li class="dropdown"><a href="filme" class="suboption">Filme</a></li>
+                <li class="dropdown"><a href="prezentare" class="suboption">Prezentare</a></li>              
                 <li class="dropdown"><a href="TBD" class="suboption">Locatii</a></li>
                 <li class="dropdown"><a href="TBD" class="suboption">Galerie</a></li>
             </ul>
         </li>
         
+        <li><div class="mainOption">Filme</div>
+            <ul>                        
+                <% for( let categorie of locals.categorii) { %>
+                    <%capitalName=categorie.categ[0].toUpperCase() + categorie.categ.substring(1);%>
+                    <li class="dropdown"><a href=<%-"/filme?categorie=".concat(categorie.categ)%> class="suboption"><%- capitalName%></a></li>
+                   
+                <% } %>
+            </ul>
+        </li>
+
         <li class="mainOption"><div><a href="#Contact">Contact</a></div></li>
     </ul>
 </nav>	
