@@ -119,3 +119,8 @@ main{
 {
     display:none;
 }
+.ceva
+{
+    display:flex;
+    flex-direction: row;
+}
