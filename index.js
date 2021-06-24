@@ -149,8 +149,22 @@ app.get(["/","/index"],function(req, res){//ca sa pot accesa pagina principala s
     res.setHeader("Content-Type","text/html");
     res.write("<!DOCTYPE html><html><head><title>ceva</title></head><body><p>Salut, Costică!</p></body></html>");
     */
-    animLimit=2*getRandom();
-    res.render("pagini/index", {imagini: verificaImagini(),anotimpCurent: getSeason(), imageCounter: 0,animLimit:animLimit}); /* relative intotdeauna la folderul views*/
+    let conditie= req.query.categorie ?  " and categorie='"+req.query.categorie+"'" : "";//daca am parametrul tip in cale (tip=cofetarie, de exemplu) adaug conditia pentru a selecta doar produsele de acel tip
+    console.log("select * from filme where 1=1"+conditie);
+    client.query("select * from filme where 1=1"+conditie, function(err,rez){
+        //console.log(err, rez);
+        //console.log(rez.rows);
+        client.query("select unnest(enum_range( null::categ_film)) as categ", function(err,rezCateg){//selectez toate valorile posibile din enum-ul categ_prajitura
+
+           // console.log(rezCateg);
+           animLimit=2*getRandom();
+            res.render("pagini/index", {produse:rez.rows, categorii:rezCateg.rows,imagini: verificaImagini(),anotimpCurent: getSeason(), imageCounter: 0,animLimit:animLimit});//obiectul {a:10,b:20} poarta numele locals in ejs  (locals["a"] sau locals.a)
+            });
+        
+       
+    });
+    
+    //res.render("pagini/index", {imagini: verificaImagini(),anotimpCurent: getSeason(), imageCounter: 0,animLimit:animLimit}); /* relative intotdeauna la folderul views*/
 });
 
 
