@@ -14,11 +14,11 @@ var animLimit;
 //setam datele clentului PostgreSQL
 //trebuie sa inlocuiti cu username-ul vostru si parola voastra pentru userul creat special pentru acest proiect
 const client = new Client({
-    host: 'postgresdb',
-    user: 'postgres',
-    password: 'Iunie_2001',
-    database: 'postgres',
-    port:5432
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+     rejectUnauthorized: false
+    }
+   
 })
 client.connect()
 
