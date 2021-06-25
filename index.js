@@ -165,7 +165,7 @@ app.get("*/galerie-animata.css",function(req, res){
     si nu pentru ca ar fi cel mai eficient mod de rezolvare*/
     res.setHeader("Content-Type","text/css");//pregatesc raspunsul de tip css
     let sirScss;
-    console.log(animLimit);
+    console.log("AnimLimit="+animLimit);
     if(animLimit==6) sirScss=fs.readFileSync("./resources/scss/galerie_animata6.scss").toString("utf-8");//citesc scss-ul cs string
    
     if(animLimit==8) sirScss=fs.readFileSync("./resources/scss/galerie_animata8.scss").toString("utf-8");
