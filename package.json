@@ -4,7 +4,8 @@
   "description": "Site pentru cinematograful FilmulTau",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "index.js"
   },
   "keywords": [
     "Film",
@@ -15,9 +16,7 @@
     "Aventura",
     "SF"
   ],
-  "script": {
-    "start": "index.js"
-  },
+  
   "author": "Ion-Marian Anghelina",
   "license": "ISC",
   "dependencies": {
