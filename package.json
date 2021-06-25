@@ -15,7 +15,7 @@
     "Aventura",
     "SF"
   ],
-  "scripts": {
+  "script": {
     "start": "index.js"
   },
   "author": "Ion-Marian Anghelina",
