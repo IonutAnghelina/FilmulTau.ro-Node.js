@@ -6,5 +6,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Expected expression.\a   \2577 \a 9 \2502    $setare-server: <%= culoare %>\d\a   \2502                    ^\a   \2575 \a   resources\\scss\\galerie_animata8.scss 9:19  root stylesheet";
+  content: "Error: Expected expression.\a   \2577 \a 9 \2502    $setare-server: <%- culoare %>\d\a   \2502                    ^\a   \2575 \a   resources\\scss\\galerie_animata8.scss 9:19  root stylesheet";
 }
