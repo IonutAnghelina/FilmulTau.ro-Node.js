@@ -1,4 +1,9 @@
-
+/* Error: Expected expression.
+ *   ,
+ * 9 |   $setare-server: <%= culoare %>
+ *   |                   ^
+ *   '
+ *   resources\scss\galerie_animata6.scss 9:19  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
